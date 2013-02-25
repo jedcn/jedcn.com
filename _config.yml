@@ -4,6 +4,7 @@ permalink: /posts/:title
 auto: true
 rdiscount:
   extensions: [smart]
+exclude: [ 'LICENSE', 'Rakefile', 'Gemfile', 'Gemfile.lock' ]
 
 name: Jed Northridge
 url: http://jedcn.com
