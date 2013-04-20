@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nearly Free Jekyll
-category: posts
+categories: jekyll
 ---
 
 # Overview
