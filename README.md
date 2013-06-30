@@ -37,7 +37,5 @@ end
 All Best,
 
 Jed Northridge
-
 Cambridge, MA
-
 June 25th, 2013
