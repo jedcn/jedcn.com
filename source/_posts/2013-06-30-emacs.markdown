@@ -1,0 +1,139 @@
+---
+layout: post
+title: Emacs
+date: 2013-06-30 15:46
+categories: core-tools
+---
+
+# Overview
+
+If you work with people that manipulate text for their livelihood
+then, sooner or later, you will hear about either
+[Emacs][wikipedia-emacs] or [Vim][wikipedia-vim].
+
+Emacs is my editor of choice right now, but I also happen to be
+surrounded by people that wonder, "Why Emacs?"
+
+I'm not sure that anyone should get involved with either editor, but,
+if you're considering emacs, this post details my history with the
+two, highlights two features exclusive to emacs: `magit` and
+`org-mode`, and contains a link to my
+[emacs configuration][jedcn-emacs-setup].
+
+# Background
+
+I first became aware of emacs 15 years ago. At the time, as a Unix
+administrator, I picked vim because of its ubiquity.
+
+A few years later, in a different setting, I found myself needing to
+author a larger document in order to graduate. Most of my peers were
+using Microsoft Word. I considered it, but heard that unfortunate
+things were happening to their documents as they grew and entered the
+realm of dozens and dozens of graphs, figures, tables, and footnotes.
+
+Another alternative at my school was to use emacs and
+[LaTeX][wikipedia-latex] instead of Word. This held real appeal: LaTeX
+documents are beautiful, and the idea of being able to break this
+large paper into plain text files that could be tracked in version
+control held real appeal.
+
+I finished [my paper][jedcn-mit-thesis], graduated, and then moved
+away from emacs while authoring Java in IDEs. So, between 2004 and
+2011, I only used emacs in a limited fashion. Then, starting in 2011,
+I shifted to Ruby (sans IDE) and have picked up my emacs usage since.
+
+This is not say that I won't go to vim someday, but there's still a
+bunch to learn in the emacs camp before I do.
+
+# Why Emacs?
+
+With what little I know about vim, I think that magit and org-mode are
+two areas where Emacs offers an experience that's both different from
+vim but also quite useful and fun.
+
+Magit and Org mode are easy to get started with, and yet both have a
+depth fo features that takes some time to explore.
+
+There are a series of easily accessible, spirited videos about emacs
+from "Emacs Rocks!" and I'd guess that if these don't show you why
+emacs is worthwhile then nothing will.
+
+## Magit
+
+[Git][wikipedia-git] came about back in 2005, and somewhere after
+[magit][github-magit] followed. It's hard to overstate how sweet magit
+is. Here's a link to a screencast that
+[provides a good overview][magit-screencast] of what's possible.
+
+## Org Mode
+
+Org Mode is also out of this world, and is exclusive to emacs. It
+describes itself as:
+
+> Org mode is for keeping notes, maintaining TODO lists, planning
+> projects, and authoring documents with a fast and effective
+> plain-text system.
+
+There are a number of [tutorials online][org-tutorials], and back in
+2008 I remember being somewhat slack jawed at
+[Carsten Dominik's talk about Org at Google][org-carsten-video].
+
+## Emacs in a Bar
+
+The Magit and Org videos referenced above are well done, but there's
+something about the enthusiasm and style about
+[this video][emacs-rocks-web-rebels] done by the Emacs Rocks crew
+(Magnar Sveen) that is really spectacular.
+
+## Emacs Rocks!
+
+The same crew behind the "Emacs in a Bar" above maintain a site and
+produce a series of videos at [emacsrocks.com][emacs-rocks].
+
+# In Closing
+
+I suspect that most people have a strong reaction to the following
+quote from [Vivek Haldar][haldar-new-frontiers]:
+
+> Overall, I think text editing is a solved problem. Text editors are
+> like wine. The older the better. You do not want a shiny new text
+> editor. You want the text editor that has been around long enough
+> and used by enough geeks that every conceivable pattern of
+> manipulating symbols on the screen has been thought of, and
+> crystallized into a re-usable pack.
+
+If you agree with it, consider giving either vim or Emacs a try.
+
+Here's the setup I use:
+[github.com/jedcn/emacs-setup][jedcn-emacs-setup]. It's
+relatively nascent-- but if you want to talk specifics,
+[drop me a line](mailto:northridge@gmail.com).
+
+## Resources
+
+* [Emacs on Wikipedia][wikipedia-emacs]
+* [Vim on Wikipedia][wikipedia-vim]
+* [LaTeX on Wikipedia][wikipedia-latex]
+* [My Emacs Setup][jedcn-emacs-setup]
+* [Git on Wikipedia][wikipedia-git]
+* [Magit on Github][github-magit]
+* [Magit Screencast on Vimeo][magit-screencast]
+* [Org Tutorials][org-tutorials]
+* [Cartsen Dominik's Org talk at Google][org-carsten-video]
+* [Emacs Rocks at Web Rebels 2012][emacs-rocks-web-rebels]
+* [Emacs Rocks!][emacs-rocks]
+* [Vivek Haldar's New Frontiers in Text Editing][haldar-new-frontiers]
+
+[wikipedia-emacs]: https://en.wikipedia.org/wiki/Emacs
+[wikipedia-vim]: http://en.wikipedia.org/wiki/Vim_(text_editor)
+[wikipedia-latex]: https://en.wikipedia.org/wiki/LaTeX
+[wikipedia-git]: http://en.wikipedia.org/wiki/Git_(software)
+[jedcn-emacs-setup]: https://github.com/jedcn/emacs-setup
+[github-magit]: https://github.com/magit/magit
+[magit-screencast]: http://vimeo.com/2871241
+[jedcn-mit-thesis]: http://dspace.mit.edu/handle/1721.1/29384
+[org-tutorials]: http://orgmode.org/worg/org-tutorials/
+[org-carsten-video]: http://www.youtube.com/watch?v=oJTwQvgfgMM
+[emacs-rocks-web-rebels]: http://www.youtube.com/watch?v=p3Te_a-AGqM
+[emacs-rocks]: http://emacsrocks.com
+[haldar-new-frontiers]: http://blog.vivekhaldar.com/post/31970017734/new-frontiers-in-text-editing
