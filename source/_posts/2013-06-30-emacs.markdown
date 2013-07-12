@@ -16,7 +16,7 @@ surrounded by people that often ask: "Why do you use Emacs?"
 
 If you're considering Emacs, or wondering why anyone would, this post
 details [my emacs configuration][github-jedcn-emacs-setup], a few
-resources for further reading, and a some videos about standout
+resources for further reading, and some videos about standout
 functionality that's present in emacs: [magit][vimeo-magit-screencast]
 and [org-mode][youtube-org-carsten-video].
 
@@ -25,8 +25,8 @@ and [org-mode][youtube-org-carsten-video].
 One great way to see what Emacs is all about is to watch
 [this video][youtube-emacs-rocks-web-rebels]. The presenter,
 [Magnar Sveen][github-magnars], is both adept at Emacs and
-entertaining. It's a 20 minute whirl designed to show off some cool
-features.
+entertaining. It's a 20 minute whirlwind designed to show off some
+cool features.
 
 I self-identify as an emacs beginner, and according to
 [this post][vivek-levels-of-emacs], I'm somewhere between a 2 and a 3
@@ -39,14 +39,15 @@ This means that if you look at
 features of Emacs that I use. There's nothing special: outside of
 plain old editing, I enjoy using magit and org-mode.
 
-Both features merit further discussion.
+Both magit and org-mode merit further discussion.
 
 ## Magit
 
 If you use git (or are learning to use git), it's hard to overstate
 how sweet magit is. This is especially so for its support of `git add
 --interactive`. Here's a link to a screencast that
-[provides a good overview][vimeo-magit-screencast] of what's possible.
+[provides a good overview][vimeo-magit-screencast] of what's generally
+possible.
 
 ## Org Mode
 
@@ -66,8 +67,7 @@ shell output, and taking notes through the day.
 
 While we're talking about videos, the the same crew behind
 [this video mentioned above][youtube-emacs-rocks-web-rebels] produce a
-series of videos at [emacsrocks.com][emacs-rocks]. I remember watching
-these thinking I'd just watch one or two, but
+series of videos at [emacsrocks.com][emacs-rocks].
 [Magnar's][github-magnars] approach is so light hearted, enthusiastic,
 and entertaining that I couldn't help myself.
 
@@ -88,12 +88,12 @@ getting started.
 # In Closing
 
 I know that Emacs isn't for everyone, and I know that there's a rather
-large learning curve, but there's a bunch to enjoy in figuring this
-out.
+large learning curve, but there's a bunch to enjoy and discover in
+figuring this out.
 
 If you read the following excerpt from
 [The New Frontiers in Text Editing][haldar-new-frontiers] and find it
-intriguing, I think you should give Emacs or Vim a whirl:
+intriguing, I suggest you give Emacs or Vim a try:
 
 > Overall, I think text editing is a solved problem. Text editors are
 > like wine. The older the better. You do not want a shiny new text
