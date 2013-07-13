@@ -12,12 +12,11 @@ slides, then check out [slid.es][slides].
 
 However, if you're hands-on with HTML, then you might consider
 [reveal.js][reveal-js] instead. If you go this route, you'll create
-your slides locally, in the editor of your choosing, but it's up to
-you to find online hosting and make backups.
+your slides locally in the editor of your choosing.
 
-If you like how reveal.js looks, but you'd rather focus on your slide
-content and have some other process orchestrate how your content fits
-into reveal.js, then you should take a look at
+Using reveal.js means cloning a repository, remove a bunch of default
+content, and inserting your own. If you'd like to have some help with
+fitting your content into reveal.js, then you should take a look at
 [reveal-ck][github-jedcn-reveal-ck].
 
 [reveal-ck][github-jedcn-reveal-ck] requires basic comfort with ruby
@@ -36,8 +35,8 @@ Then, install reveal-ck with `gem install reveal-ck --no-rdoc --no-ri`.
 
 Verify that reveal-ck is present with `reveal-ck --help`.
 
-Next, create a first set of slides by putting the following into a
-file named `slides.haml`.
+As a first step toward creating a set of slides, put the following
+into a file named `slides.haml`:
 
 ```
 %section
@@ -57,7 +56,7 @@ Each `%section` above represents a new slide. There are four slides:
 3, 2, 1, and Contact!
 
 Once you've got that saved in a file name `slides.haml`, run
-`reveal-ck generate`, and you're done. Your slides will be available
+`reveal-ck generate`, and you're done! Your slides will be available
 at `slides/index.html` I've done this and put
 [the result online here](../../files/posts/reveal-ck/simple/slides/index.html).
 
@@ -159,16 +158,16 @@ following:
 
 # In Closing
 
-Before I knew about reveal.js, I'd be coding along in Emacs (or
-whatever) and if I knew slides were in my future I'd boot up
-Powerpoint or Keynote (or whatever) at some point.
+reveal.js is awesome.
 
-Now, with reveal.js, you can author slides without every leaving your
-favorite editor. They're plain text, so they can be easily managed in
+Before I knew about it, I'd be coding along in Emacs (or whatever) and
+if I knew slides were in my future I'd boot up Keynote (or whatever)
+at some point.
+
+Now, with reveal.js, you can author slides without ever leaving your
+favorite editor. They are plain text, so they can be easily managed in
 source control. On top of that, they look great, are mobile aware, and
 if you host them on the web, you can easily bring them anywhere.
-
-reveal.js is awesome.
 
 Taking it one step further, I like using reveal-ck when dealing with
 reveal.js because:
@@ -177,7 +176,9 @@ reveal.js because:
   files that come with reveal.js
 
 * reveal-ck allows me to focus right on my content (the
-  `slides.haml`). It takes less work to make a better presentation.
+  `slides.haml`).
+
+In short, reveal-ck takes less work to make a better presentation.
 
 At any rate, I hope this helps. Let me know what you think.
 
