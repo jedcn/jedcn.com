@@ -1,0 +1,197 @@
+---
+layout: post
+title: "reveal-ck"
+date: 2013-07-12 07:19
+categories: projects
+---
+
+# Overview
+
+If you've been asked to give a presentation and need accompanying
+slides, then check out [slid.es][slides].
+
+However, if you're hands-on with HTML, then you might consider
+[reveal.js][reveal-js] instead. If you go this route, you'll create
+your slides locally, in the editor of your choosing, but it's up to
+you to find online hosting and make backups.
+
+If you like how reveal.js looks, but you'd rather focus on your slide
+content and have some other process orchestrate how your content fits
+into reveal.js, then you should take a look at
+[reveal-ck][github-jedcn-reveal-ck].
+
+[reveal-ck][github-jedcn-reveal-ck] requires basic comfort with ruby
+and [haml][haml]. It allows you to focus on putting your slide content
+into a single file which will become an input to a command line tool.
+
+The [reveal-ck][github-jedcn-reveal-ck] gem comes with a command line
+tool of the same name (`reveal-ck`) that transforms your content into
+a [reveal.js][reveal-js] slide deck.
+
+# A Quick Example
+
+Open up a terminal, and make sure you have Ruby 1.9.3+ with `ruby -v`.
+
+Then, install reveal-ck with `gem install reveal-ck --no-rdoc --no-ri`.
+
+Verify that reveal-ck is present with `reveal-ck --help`.
+
+Next, create a first set of slides by putting the following into a
+file named `slides.haml`.
+
+```
+%section
+  3
+
+%section
+  2
+
+%section
+  1
+
+%section
+  Contact!
+```
+
+Each `%section` above represents a new slide. There are four slides:
+3, 2, 1, and Contact!
+
+Once you've got that saved in a file name `slides.haml`, run
+`reveal-ck generate`, and you're done. Your slides will be available
+at `slides/index.html` I've done this and put
+[the result online here](../../files/posts/reveal-ck/simple/slides/index.html).
+
+# The Basics
+
+The example above is as simple as it gets. Here are a few more
+thoughts on getting the most out of reveal-ck and reveal.js.
+
+## haml
+
+The content that goes in `slides.haml` is [haml][haml].
+
+The reason reveal-ck uses haml is because most of the _really neat and
+more advanced_ stuff that you might do with reveal.js requires the
+ability to get at the underlying HTML classes and attributes.
+
+Haml has a slight learning curve, but it is pretty slick once you get
+going. If you're new to haml, check out
+[the haml reference][haml-reference] or
+[the haml tutorial][haml-tutorial].
+
+## markdown
+
+If you don't need the more advanced features of reveal.js, or if you
+just like markdown, you can fallback to it with a haml filter:
+
+```
+%section
+  :markdown
+    # Hello
+    ## ..there!
+```
+
+reveal-ck bundles redcarpet for markdown processing.
+
+## reveal.js effects and styling
+
+To get the most of out reveal.js you need to understand the classes,
+markup, and data attributes that it expects. For example, if you want
+something to be initially hidden and then fade in when you advance
+slides, you need to add the `fragment` class. Here's an example where
+everything with `fragment` is hidden initially and then appears in
+stages as you advance:
+
+```
+%section
+  %p
+    RSpec is
+    %a{ href: "https://github.com/rspec/rspec" } Behaviour Driven Development for Ruby
+    %span.fragment And this is great.
+    %span.fragment And RSpec is great.
+    %span.fragment But..
+```
+
+The way to make progress here is to look at reveal.js proper and read
+through its document (and examine the markup for the default slides).
+reveal-ck has an embedded version of reveal.js. If things aren't
+working as expected, drop me a line-- reveal.js will get out of date
+over time. It only takes a moment to update, but the gem has to be
+republished: just let me know.
+
+## Supplying a Config
+
+Starting with version 0.1.3, `reveal-ck` pays attention to a
+configuration file. You can create a file named `config.toml` in the
+same directory with your `slides.haml` and put the following into it:
+
+```
+author = "Your Name"
+title  = "The Title of your Presentation"
+
+[presentation]
+
+theme  = "night"
+```
+
+This will change the `<title>` of the slides as you might expect, and
+`theme` can be set to any of the available themes in reveal.js. By
+adding this file and regenerating, you can end up
+[with this result](../../files/posts/reveal-ck/simple-with-config/slides/index.html).
+
+## Bundling Up Images
+
+As with any HTML document, if you've got an `<img/>` you can make the
+`src` absolute. However, if you don't have (or don't want) images
+hosted anywhere, you can also bundle them up with reveal-ck.
+
+If you've got a `slides.haml`, create an `images/` directory as its
+peer and put your images in there. When `reveal-ck generate` runs,
+anything in `images/` will be bundled up into the `slides/` directory.
+
+In short, this means that you can reference those images with the
+following:
+
+```
+%section
+  %img{ alt: "My Image", src: "images/my-image.png" }
+```
+
+# In Closing
+
+Before I knew about reveal.js, I'd be coding along in Emacs (or
+whatever) and if I knew slides were in my future I'd boot up
+Powerpoint or Keynote (or whatever) at some point.
+
+Now, with reveal.js, you can author slides without every leaving your
+favorite editor. They're plain text, so they can be easily managed in
+source control. On top of that, they look great, are mobile aware, and
+if you host them on the web, you can easily bring them anywhere.
+
+reveal.js is awesome.
+
+Taking it one step further, I like using reveal-ck when dealing with
+reveal.js because:
+
+* reveal-ck allows me to isolate my content (the slides) from the 70+
+  files that come with reveal.js
+
+* reveal-ck allows me to focus right on my content (the
+  `slides.haml`). It takes less work to make a better presentation.
+
+At any rate, I hope this helps. Let me know what you think.
+
+## Resources
+
+* [reveal.js][reveal-js]
+* [slid.es][slides]
+* [Haml][haml]
+* [Haml Reference][haml-reference]
+* [Haml Tutorial][haml-tutorial]
+
+[reveal-js]: http://lab.hakim.se/reveal-js/
+[slides]: http://slid.es/
+[haml]: http://haml.info/
+[haml-tutorial]: http://haml.info/tutorial.html
+[haml-reference]: http://haml.info/docs/yardoc/file.REFERENCE.html
+[github-jedcn-reveal-ck]: https://github.com/jedcn/reveal-ck
