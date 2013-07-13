@@ -112,11 +112,11 @@ stages as you advance:
 ```
 
 The way to make progress here is to look at reveal.js proper and read
-through its document (and examine the markup for the default slides).
-reveal-ck has an embedded version of reveal.js. If things aren't
-working as expected, drop me a line-- reveal.js will get out of date
-over time. It only takes a moment to update, but the gem has to be
-republished: just let me know.
+through its documentation (and examine the markup for the default
+slides). reveal-ck has an embedded version of reveal.js. If things
+aren't working as expected, drop me a line-- reveal.js will get out of
+date over time. It only takes a moment to update, but the gem has to
+be republished: just let me know.
 
 ## Supplying a Config
 
@@ -161,8 +161,7 @@ following:
 reveal.js is awesome.
 
 Before I knew about it, I'd be coding along in Emacs (or whatever) and
-if I knew slides were in my future I'd boot up Keynote (or whatever)
-at some point.
+if I knew slides were in my future I'd boot up Keynote (or whatever).
 
 Now, with reveal.js, you can author slides without ever leaving your
 favorite editor. They are plain text, so they can be easily managed in
