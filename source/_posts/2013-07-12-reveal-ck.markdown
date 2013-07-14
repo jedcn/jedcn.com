@@ -7,20 +7,20 @@ categories: projects
 
 # Overview
 
-If you've been asked to give a presentation and need accompanying
-slides, then check out [slid.es][slides].
+If you're a web developer and have been asked to give a presentation
+and need accompanying slides, then check out [reveal.js][reveal-js].
 
-However, if you're hands-on with HTML, then you might consider
-[reveal.js][reveal-js] instead. If you go this route, you'll create
-your slides locally in the editor of your choosing.
+If you go this route, you will probably start by cloning the reveal.js
+repository, finding the index.html file, and then you'll begin
+replacing the default content with your own.
 
-Using reveal.js means cloning a repository, remove a bunch of default
-content, and inserting your own. If you'd like to have some help with
-fitting your content into reveal.js, then you should take a look at
-[reveal-ck][github-jedcn-reveal-ck].
+If you'd like to have some help with fitting your content into
+reveal.js, then you should take a look at
+[reveal-ck][github-jedcn-reveal-ck]. reveal-ck is short for "reveal.js
+construction kit."
 
-[reveal-ck][github-jedcn-reveal-ck] requires basic comfort with ruby
-and [haml][haml]. It allows you to focus on putting your slide content
+[It][github-jedcn-reveal-ck] requires basic comfort with ruby and
+[haml][haml], and allows you to focus on putting your slide content
 into a single file which will become an input to a command line tool.
 
 The [reveal-ck][github-jedcn-reveal-ck] gem comes with a command line
@@ -56,8 +56,11 @@ Each `%section` above represents a new slide. There are four slides:
 3, 2, 1, and Contact!
 
 Once you've got that saved in a file name `slides.haml`, run
-`reveal-ck generate`, and you're done! Your slides will be available
-at `slides/index.html` I've done this and put
+`reveal-ck generate`, and you're done!
+
+Your slides will be available at `slides/index.html`.
+
+I've done this and put
 [the result online here](../../files/posts/reveal-ck/simple/slides/index.html).
 
 # The Basics
