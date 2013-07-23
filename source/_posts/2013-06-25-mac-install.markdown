@@ -60,7 +60,7 @@ modified my PATH appropriately:
 Once you've got `git`:
 
     git config --global user.name "your name"
-    git config --global user.name "your@email.com"
+    git config --global user.email "your@email.com"
 
 While browsing through Github's
 [help on setting up git][github-setup-git] I became aware of this
