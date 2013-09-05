@@ -1,0 +1,2136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Emacs Configuration</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Emacs Configuration"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-09-04T17:14-0400"/>
+<meta name="author" content="Jed Northridge"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+        border: 1pt solid #AEBDCC;
+        background-color: #F3F5F7;
+        padding: 5pt;
+        font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Emacs Configuration</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Overview</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Background: Literate Programming in Emacs</a></li>
+<li><a href="#sec-1-2">1.2 An Emacs Configuration</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 General</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Package Repository</a></li>
+<li><a href="#sec-2-2">2.2 PATH</a></li>
+<li><a href="#sec-2-3">2.3 UTF-8</a></li>
+<li><a href="#sec-2-4">2.4 Start Server</a></li>
+<li><a href="#sec-2-5">2.5 Save Place</a></li>
+<li><a href="#sec-2-6">2.6 Appearance</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Personal Information</a></li>
+<li><a href="#sec-4">4 Key Bindings</a>
+<ul>
+<li><a href="#sec-4-1">4.1 See Occurrences while Searching</a></li>
+<li><a href="#sec-4-2">4.2 Running Methods</a></li>
+<li><a href="#sec-4-3">4.3 Text Size</a></li>
+<li><a href="#sec-4-4">4.4 Goto Line</a></li>
+<li><a href="#sec-4-5">4.5 Magit</a></li>
+<li><a href="#sec-4-6">4.6 MacOS's "Command"</a></li>
+<li><a href="#sec-4-7">4.7 Movement</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Behaviors</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Miscellaneous</a></li>
+<li><a href="#sec-5-2">5.2 Whitespace Cleanup</a></li>
+<li><a href="#sec-5-3">5.3 Yes or No?</a></li>
+<li><a href="#sec-5-4">5.4 Autofill</a></li>
+<li><a href="#sec-5-5">5.5 Display Column Numbers when Programming</a></li>
+<li><a href="#sec-5-6">5.6 Highlight Current Line when Programming</a></li>
+<li><a href="#sec-5-7">5.7 Use λ instead of lambda</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 Modes and Packages</a>
+<ul>
+<li><a href="#sec-6-1">6.1 General Package Listing</a></li>
+<li><a href="#sec-6-2">6.2 Ruby Packages</a></li>
+<li><a href="#sec-6-3">6.3 Magit</a></li>
+<li><a href="#sec-6-4">6.4 yasnippet</a></li>
+<li><a href="#sec-6-5">6.5 org-mode</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 Various and Sundry</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Jim Weirich's eval-buffer</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 Appendix A: Installation Details</a>
+<ul>
+<li><a href="#sec-8-1">8.1 Emacs Installation</a></li>
+<li><a href="#sec-8-2">8.2 Using <code>emacs-setup</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 Appendix B: Babel and the Config</a>
+<ul>
+<li><a href="#sec-9-1">9.1 Composite File</a></li>
+<li><a href="#sec-9-2">9.2 Component Files</a></li>
+<li><a href="#sec-9-3">9.3 Concatenation</a></li>
+<li><a href="#sec-9-4">9.4 Extracting elisp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Overview</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+  I use a simple mechanism for breaking down a single emacs
+  configuration across several component files. Any one of these
+  component files is written in a format that enables that file to
+  simultaneously be more than one thing. Each file surely contains
+  elisp that is used to configure emacs, but that same file also
+  contains a prose explanation behind the motivation and impact of the
+  associated elisp. The same mechanism combines these component pieces
+  to form an overall configuration, ultimately within a single file an
+  in pure elisp, that emacs is capable of interpreting. In the end,
+  the elisp from each file provides a discrete section of the total,
+  generated configuration, just as the prose explanation from each
+  file comes to represent a section within this document.
+</p>
+<p>
+  The value of this mechanism draws from the belief that complexity is
+  reduced when each file can bear a single responsibility for
+  describing one smaller part of a large configuration. This follows
+  from the similar expectation that any one chapter within a larger
+  document can rightly be expected to describe a self-contained idea.
+</p>
+<p>
+  The notion of first creating a prose explanation of how "code" works
+  and then embedding that same code within that explanation is known
+  as <a href="http://en.wikipedia.org/wiki/Literate_programming">Literate Programming</a>. This document describes two such systems.
+  The first, and larger of the two, is a literately programmed emacs
+  configuration. The second is a description of how literate
+  programming is achieved within emacs and then meaningfully used to
+  configure emacs.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Background: Literate Programming in Emacs</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+   Emacs provides support for literate programming most directly
+   through <a href="http://orgmode.org/">org-mode</a>, and, within org-mode, <a href="http://orgmode.org/worg/org-contrib/babel/">babel</a>. When practicing
+   literate programming in this style, you author org-mode documents
+   as normal and you additionally embed source code within these
+   documents. Org-mode gives you strong support for authoring a
+   document of any type: you can export to various formats, structure
+   documents with semantic headings, generate a table of contents,
+   enjoy hyperlink syntax, and more. In addition to basic org-mode
+   functionality, babel then allows you to include source code within
+   these documents. Source code in this context enjoys the same
+   support that emacs provides for normal editing. You can choose any
+   single language or a mix of languages and you work in the mode of
+   the language.
+</p>
+<p>
+   Embedded source code and its easy extraction is the foundation that
+   enables literate programming. Briefly, as you consider programming
+   "a thing," you are given all of the tools you need to write a
+   stand-alone document about that "thing." You are free to layout and
+   follow a narrative that you see fit. This document is my prose
+   explanation of my emacs configuration.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> An Emacs Configuration</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+   <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html">When Emacs is started, it normally tries to load a Lisp program from an initialization file, or init file for short.</a> The mechanism
+   I use for managing my configuration is centered around two elisp
+   files. A smaller initialization file, <code>init.el</code>, lives in
+   <code>~/.emacs.d</code>, a location that is well known to emacs and this file
+   is read on start-up. <code>init.el</code> presumes that it will be able to
+   load a much larger elisp file located at
+   <code>~/emacs.d/emacs-setup/emacs-setup.el</code>.
+</p>
+<p>
+   These two files, <code>init.el</code> and <code>emacs-setup.el</code>, are extracted from
+   source code blocks within .org files using babel. Appendix A
+   contains <code>init.el</code> in its entirety. The contents of <code>emac-setup.el</code>
+   are spread across the remainder of the .org files and can be
+   constructed by concatenating the extract results of all files.
+</p>
+<p>
+   In summary, I use Org-mode and .org files to serve two purposes:
+</p>
+<ul>
+<li>.org files contain documentation of my configuration. This
+      documentation can be viewed on Github or translated into another
+      format such as LaTeX or HTML.
+
+</li>
+<li>.org files contain embedded elisp behind the same configuration.
+      Babel, a feature of Org-mode, can parse a .org file and extract
+      the associated elisp.
+</li>
+</ul>
+
+
+<p>
+   Appendix A details how I install and setup emacs. It also contains
+   information about how <code>init.el</code> and the start up process works.
+   Appendix B defines a process that is capable of creating
+   <code>emacs-setup.el</code> from distinct .org files.
+</p>
+<p>
+   When it comes to elisp, functions and variables associated with my
+   emacs setup will begin with <code>jedcn-es</code>. The first variable we
+   define sets the expecation that the directory <code>emacs-setup/</code> can be
+   placed (or linked to) underneath <code>~/.emacs.d</code>:
+</p>
+
+
+
+<pre class="example">(setq jedcn-es/dir (concat
+                    user-emacs-directory
+                    "emacs-setup"))
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> General</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Package Repository</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<p>
+   Extensions for emacs are known as "packages," and emacs has a built
+   in package management system. Emacs lisp packages are stored in
+   archives (elpas) and, initially, emacs knows about a single such
+   archive: <a href="http://elpa.gnu.org">http://elpa.gnu.org</a>. This archive has approximately 50
+   packages.  However, there are additional elpas out there, and I
+   have had good luck finding up-to-date packages in
+   <a href="http://melpa.milkbox.net/">http://melpa.milkbox.net/</a>.
+</p>
+<p>
+   That said, each time I open up emacs I make sure that the package
+   management system is initialized before I configure it to use
+   melpa:
+</p>
+
+
+
+<pre class="example">(package-initialize)
+
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+</pre>
+
+
+<p>
+   My observation is that packages cannot be installed until a
+   repository is contacted, at least once, and an overview of the
+   contents are downloaded and cached locally.
+</p>
+<p>
+   The following elisp will run <code>package-list-packages</code> if
+   <code>~/.emacs.d/elpa</code> does not exist, and is rooted in the belief that
+   the first time you run <code>package-list-packages</code> the contents of the
+   archive are cached within <code>~/.emacs.d/elpa</code>.
+</p>
+
+
+
+<pre class="example">(unless
+    (file-directory-p "~/.emacs.d/elpa")
+  (package-list-packages))
+</pre>
+
+
+<p>
+   I am interested in ensuring that the elpa cache has been created so
+   that I can programatically install packages. I first read about
+   this in Sacha Chua's excellent blog post on her configuration:
+   <a href="http://sachachua.com/blog/2012/06/literate-programming-emacs-configuration-file/">Literate programming and my Emacs configuration file</a>. She defines a
+   function (copied below) that will install the package if it is not
+   present:
+</p>
+
+
+
+<pre class="example">(defun sacha/package-install (package &amp;optional repository)
+  "Install PACKAGE if it has not yet been installed.
+If REPOSITORY is specified, use that."
+  (unless (package-installed-p package)
+    (let ((package-archives (if repository
+                                (list (assoc repository package-archives))
+                              package-archives)))
+    (package-install package))))
+</pre>
+
+
+<p>
+   In combination, these facilities are the foundation of my package
+   management strategy: initialize the subsystem, configure the
+   repositories, and then define a means to programatically install
+   missing packages. Doing this early on in my initialization process
+   means that code which follows can state, "I expect to have package
+   XYZ," by saying, <code>(sacha/package-install "XYZ")</code> and then presume
+   that XYZ is present.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> PATH</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+   Emacs can run shell commands on your behalf. When it does this, it
+   needs to know about the equivalent of your PATH so it can find
+   commands.
+</p>
+<p>
+   I am not sure how this works. There is something that is an
+   environment variabled named <code>PATH</code> that is reachable via <code>(getenv    "PATH")</code> and there is something else that is a elisp variable named
+   <code>exec-path</code>.
+</p>
+<p>
+   Rather than interact with my shell and have Emacs learn values from
+   a <code>$PATH</code> proper, I am explicit about setting both:
+</p>
+
+
+
+<pre class="example">(setq jedcn-env-path "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin")
+
+(defun jedcn-sync-env-path-and-exec-path (desired-path)
+  "Sets exec-path and env 'PATH' based on DESIRED-PATH"
+  (setenv "PATH" desired-path)
+  (setq exec-path (split-string desired-path ":")))
+
+(jedcn-sync-env-path-and-exec-path jedcn-env-path)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> UTF-8</h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+<p>
+  I picked this up from Magnars in his <a href="https://github.com/magnars/.emacs.d/blob/master/sane-defaults.el">sane-defaults.el</a>.
+</p>
+
+
+
+<pre class="example">(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Start Server</h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+<p>
+   Emacs is often run for hours (or days, or weeks) at a time. One of
+   the benefits of such a long-lived process is that you can build a
+   small tool, like <code>emacsclient</code> that can connect to a running emacs
+   and request that something be edited. For example, you can tell git
+   that it should use <code>emacsclient</code> whenever it needs to edit
+   something:
+</p>
+
+
+
+<pre class="example">git config --global core.editor /usr/local/bin/emacsclient
+</pre>
+
+
+<p>
+   That said, here's the elisp that starts up an emacs server:
+</p>
+
+
+
+<pre class="example">(server-start)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> Save Place</h3>
+<div class="outline-text-3" id="text-2-5">
+
+
+<p>
+  I got this one from Magnars: <a href="http://whattheemacsd.com/init.el-03.html">init.el-03</a>.
+</p>
+
+
+
+<pre class="example">(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> Appearance</h3>
+<div class="outline-text-3" id="text-2-6">
+
+
+
+</div>
+
+<div id="outline-container-2-6-1" class="outline-4">
+<h4 id="sec-2-6-1"><span class="section-number-4">2.6.1</span> Color Theme</h4>
+<div class="outline-text-4" id="text-2-6-1">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'zenburn-theme)
+(load-theme 'zenburn t)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2"><span class="section-number-4">2.6.2</span> Font</h4>
+<div class="outline-text-4" id="text-2-6-2">
+
+
+<p>
+    I like a bigger font (say, 18) and I vary between "Monaco-18" or
+    "Menlo-18".
+</p>
+
+
+
+<pre class="example">(set-face-attribute 'default nil :font "Menlo-18")
+</pre>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Personal Information</h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+
+
+<pre class="example">(setq user-full-name "Jed Northridge"
+      user-mail-address "northridge@gmail.com")
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Key Bindings</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+  My main inspiration for keybindings have come from <a href="https://github.com/technomancy/emacs-starter-kit/blob/v2/modules/starter-kit-bindings.el">ESK</a> and from
+  <a href="https://github.com/magnars/.emacs.d/blob/master/key-bindings.el">Magnars</a>.
+</p>
+<p>
+  Documenting (and configuring) keybindings is somewhat strange. These
+  things appear out of no where, and do not always follow an obvious
+  order.
+</p>
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> See Occurrences while Searching</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+<p>
+   If you are searching for something, and you press <code>C-o</code>, you can
+   see all of the occurrences of that something within the file. Once
+   that <b>Occur</b> window comes up, you can press <code>e</code> to start
+   editing. You can press <code>C-c C-c</code> to get out of it.
+</p>
+
+
+
+<pre class="example">(define-key isearch-mode-map (kbd "C-o")
+  (lambda () (interactive)
+    (let ((case-fold-search isearch-case-fold-search))
+      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Running Methods</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+<p>
+   When it comes to running methods explicitly, I always use C-x C-m.
+   I picked this up from Steve Yegge's <a href="https://sites.google.com/site/steveyegge2/effective-emacs">Effective Emacs</a>. He says use
+   <code>execute-extended-command</code>, but I always use smex.
+</p>
+
+
+
+<pre class="example">(global-set-key "\C-x\C-m" 'smex)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Text Size</h3>
+<div class="outline-text-3" id="text-4-3">
+
+
+<p>
+   Making text larger or smaller with ease is something I use every
+   day, several times a day. This happens most commonly when I am
+   showing someone something in emacs (say, pairing or running a
+   meeting), but also when I am at home and do not have my glasses.
+   These particular keybindings are all about the <code>+</code> and the <code>-</code>.
+</p>
+
+
+
+<pre class="example">(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Goto Line</h3>
+<div class="outline-text-3" id="text-4-4">
+
+
+<p>
+  The following makes it so that when I press <code>C-x g</code> I can expect to
+  be prompted to enter a line number to jump to it.
+</p>
+
+
+
+<pre class="example">(global-set-key (kbd "C-x g") 'goto-line)
+</pre>
+
+
+<p>
+  And the elisp below makes it so that whatever goto-line was bound to
+  is now bound to a new function: goto-line-with-feedback.
+</p>
+<p>
+  In turn, goto-line-with-feedback modifies the buffer you are working
+  in to show line numbers but only when you are actively looking to
+  pick a number.
+</p>
+<p>
+  The point of showing line numbers is to give you an idea of where
+  you will end up.
+</p>
+<p>
+  The point of <b>only</b> showing them while going to a line is to keep
+  the screen free of distractions (line numbers) unless it is helpful.
+</p>
+<p>
+  This comes from <a href="http://whattheemacsd.com/key-bindings.el-01.html">this post</a> within "what the emacs.d."
+</p>
+
+
+
+<pre class="example">(global-set-key [remap goto-line] 'goto-line-with-feedback)
+
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> Magit</h3>
+<div class="outline-text-3" id="text-4-5">
+
+
+<p>
+  I like to think "C-x m"agit.
+</p>
+
+
+
+<pre class="example">(global-set-key (kbd "C-x m") 'magit-status)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> MacOS's "Command"</h3>
+<div class="outline-text-3" id="text-4-6">
+
+
+<p>
+   I think keys called 'super' and 'hyper' used to appear on the
+   keyboards of fabled 'Lisp Machines,' as described in this ErgoEmacs
+   post about <a href="http://ergoemacs.org/emacs/emacs_hyper_super_keys.html">Super and Hyper Keys</a>. I may take advantage of these some
+   day, but for now I am happy to have both the 'alt/option' key and
+   the 'command' key on my Mac do the same thing: meta.
+</p>
+<p>
+   Given the default setup of my brew installed emacs, the following
+   change makes it so that "command does meta"
+</p>
+<p>
+   If I am back this way in the future again, I'd like to remind
+   myself to consider the following variables: mac-option-modifier,
+   mac-command-modifier, and ns-function-modifer.
+</p>
+
+
+
+<pre class="example">(setq mac-command-modifier 'meta)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> Movement</h3>
+<div class="outline-text-3" id="text-4-7">
+
+
+<p>
+   I rely on standard emacs commands to move around, with the
+   following enhancements:
+</p>
+
+</div>
+
+<div id="outline-container-4-7-1" class="outline-4">
+<h4 id="sec-4-7-1"><span class="section-number-4">4.7.1</span> Using shift makes standard movement 5x faster</h4>
+<div class="outline-text-4" id="text-4-7-1">
+
+
+<p>
+    This comes from Magnars in this <a href="http://whattheemacsd.com/key-bindings.el-02.html">post of whattheemacsd.com</a>.
+</p>
+
+
+
+<pre class="example">(global-set-key (kbd "C-S-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "C-S-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-S-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-S-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-7-2" class="outline-4">
+<h4 id="sec-4-7-2"><span class="section-number-4">4.7.2</span> Move current line up or down</h4>
+<div class="outline-text-4" id="text-4-7-2">
+
+
+<p>
+    This matches what Magnars says in <a href="http://whattheemacsd.com/editing-defuns.el-02.html">this post</a>, except I also use
+    META.
+</p>
+
+
+
+<pre class="example">(defun move-line-down ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines 1))
+    (forward-line)
+    (move-to-column col)))
+
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (move-to-column col)))
+(global-set-key (kbd "&lt;C-M-S-down&gt;") 'move-line-down)
+(global-set-key (kbd "&lt;C-M-S-up&gt;") 'move-line-up)
+</pre>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Behaviors</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<p>
+  &hellip;
+</p>
+<p>
+  be·hav·ior
+  <i>biˈhāvyər</i>
+  Noun
+</p>
+<ul>
+<li>The way in which one acts or conducts oneself, esp. toward others:
+    "his insulting behavior towards me".
+
+</li>
+<li>The way in which an animal or person acts in response to a
+    particular situation or stimulus: "the feeding behavior of
+    predators".
+</li>
+</ul>
+
+
+<p>
+  &hellip;
+</p>
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Miscellaneous</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+<p>
+   Do not "ding" all of the time, and instead flash the screen. Do not
+   show the Emacs "splash" screen.
+</p>
+
+
+
+<pre class="example">(setq visible-bell t
+      inhibit-startup-message t)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Whitespace Cleanup</h3>
+<div class="outline-text-3" id="text-5-2">
+
+
+<p>
+   The following creates a function that cleans up whitespace, and
+   then adds a hook that makes this happen each time you save. It
+   comes from a post within "what the emacs.d," specifically titled
+   <a href="http://whattheemacsd.com/buffer-defuns.el-01.html">buffer defuns</a>.
+</p>
+
+
+
+<pre class="example">(defun cleanup-buffer-safe ()
+  "Perform a bunch of safe operations on the whitespace content of a buffer."
+  (interactive)
+  (untabify (point-min) (point-max))
+  (delete-trailing-whitespace)
+  (set-buffer-file-coding-system 'utf-8))
+
+(add-hook 'before-save-hook 'cleanup-buffer-safe)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Yes or No?</h3>
+<div class="outline-text-3" id="text-5-3">
+
+
+<p>
+   Emacs often asks you to type "yes or no" to proceed. As an example,
+   consider when you are in magit, and you press "k" to kill off a
+   hunk. I am happy to have a confirmation before something is
+   deleted, but I prefer to just press "y" instead of "y-e-s-&lt;RETURN&gt;"
+</p>
+
+
+
+<pre class="example">(defalias 'yes-or-no-p 'y-or-n-p)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Autofill</h3>
+<div class="outline-text-3" id="text-5-4">
+
+
+<p>
+   By observation alone, <code>auto-fill-mode</code> makes it so that words wrap
+   around the screen by inserting a new line once you go past a
+   certain spot. I want to auto-fill if I am working on text. When I
+   am programming, I only want to auto-fill if I am writing a comment.
+</p>
+<p>
+   Both of these come from technomancy in v2 of the <a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>.
+</p>
+
+
+
+<pre class="example">(defun esk-local-comment-auto-fill ()
+  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  (auto-fill-mode t))
+(add-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Display Column Numbers when Programming</h3>
+<div class="outline-text-3" id="text-5-5">
+
+
+<p>
+   Show column numbers when programming. This comes from technomancy
+   in v2 of the <a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>.
+</p>
+
+
+
+<pre class="example">(defun esk-local-column-number-mode ()
+  (make-local-variable 'column-number-mode)
+  (column-number-mode t))
+
+(add-hook 'prog-mode-hook 'esk-local-column-number-mode)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Highlight Current Line when Programming</h3>
+<div class="outline-text-3" id="text-5-6">
+
+
+<p>
+   Highlight the current line. This comes from technomancy in v2 of
+   the <a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>.
+</p>
+
+
+
+<pre class="example">(defun esk-turn-on-hl-line-mode ()
+  (when (&gt; (display-color-cells) 8)
+    (hl-line-mode t)))
+
+(add-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-7" class="outline-3">
+<h3 id="sec-5-7"><span class="section-number-3">5.7</span> Use λ instead of lambda</h3>
+<div class="outline-text-3" id="text-5-7">
+
+
+<p>
+   If you see "lambda" replace it with a λ. This comes from
+   technomancy in v2 of the <a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>.
+</p>
+
+
+
+<pre class="example">(defun esk-pretty-lambdas ()
+  (font-lock-add-keywords
+   nil `(("(?\\(lambda\\&gt;\\)"
+          (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                    ,(make-char 'greek-iso8859-7 107))
+                    nil))))))
+
+(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Modes and Packages</h2>
+<div class="outline-text-2" id="text-6">
+
+
+<p>
+  Modes bring significant functionality into Emacs. These are the
+  modes (and any associated configuration) that I use.
+</p>
+<p>
+  As I understand it, modes are delivered via packages. You can browse
+  available packages by typing <code>M-x package-list-packages</code>. As you
+  move around (just like a regular buffer), if you see something you
+  like you can press <code>i</code> and the package on the same line as your
+  cursor will be marked for an upcoming installation. When you are
+  ready, press 'x' to install each package that has been marked in
+  this way.
+</p>
+<p>
+  If I like a package, I'll revisit this file and formally add it to
+  the list of packages I use. In this file, my intent is to provide
+  notes about a mode, why I am using it, what I am doing with it,
+  etc. Further, I want to hook the list of packages that I am using
+  into a system by which they are automatically installed. I am
+  looking to do this to make sure that I can recreate my emacs
+  installation if I move to a new computer. The means by which
+  packages are automatically installed is with a function named
+  <code>sacha/package-install</code>. This was defined previously.
+</p>
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> General Package Listing</h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+
+</div>
+
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> better-defaults</h4>
+<div class="outline-text-4" id="text-6-1-1">
+
+
+<p>
+    I started with Emacs Starter Kit, and am following its progression
+    from v1 to v2 and, now, v3. In v3 the esk becomes prose only, and
+    identifies <code>better-defaults</code> as a single package with "universal
+    appeal."
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'better-defaults)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> smex</h4>
+<div class="outline-text-4" id="text-6-1-2">
+
+
+<p>
+    When you want to run a command (say, via M-x) <a href="https://github.com/nonsequitur/smex">smex</a> provides
+    instant feedback by displaying available commands and remembering
+    ones you have recently invoked.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'smex)
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> markdown-mode</h4>
+<div class="outline-text-4" id="text-6-1-3">
+
+
+<p>
+  I write in Markdown all the time, and sometimes I use the
+  "compilation" facility of this mode.
+</p>
+<p>
+  If you do start using the compilation aspect, you'll need a command
+  line "markdown" to execute.
+</p>
+<p>
+  I got markdown with <code>brew install markdown</code>.
+</p>
+<p>
+  My notes indicate that:
+</p>
+<p>
+    You can change the markdown executable, or read more about the
+    mode, here: <a href="http://jblevins.org/projects/markdown-mode/">http://jblevins.org/projects/markdown-mode/</a>
+</p>
+<p>
+    Also, Highlights:
+</p>
+<ul>
+<li><code>C-c C-c p</code>: Run markdown on buffer contents. Open result in
+      browser.
+</li>
+</ul>
+
+
+<p>
+  I started using markdown-mode+ recently, and I did so after doing a
+  bunch of work to get pandoc installed and working with Emacs.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'markdown-mode)
+(sacha/package-install 'markdown-mode+)
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span> puppet-mode</h4>
+<div class="outline-text-4" id="text-6-1-4">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'puppet-mode)
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-5" class="outline-4">
+<h4 id="sec-6-1-5"><span class="section-number-4">6.1.5</span> haml-mode</h4>
+<div class="outline-text-4" id="text-6-1-5">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'haml-mode)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-6" class="outline-4">
+<h4 id="sec-6-1-6"><span class="section-number-4">6.1.6</span> yaml-mode</h4>
+<div class="outline-text-4" id="text-6-1-6">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-7" class="outline-4">
+<h4 id="sec-6-1-7"><span class="section-number-4">6.1.7</span> coffee-mode</h4>
+<div class="outline-text-4" id="text-6-1-7">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'coffee-mode)
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Ruby Packages</h3>
+<div class="outline-text-3" id="text-6-2">
+
+
+<p>
+  I really enjoy writing ruby.
+</p>
+<p>
+  At a high level, my MacOS has RVM installed from <a href="http://rvm.io">http://rvm.io</a>.
+</p>
+<p>
+  Then, my emacs uses a package named rvm that understands how
+  <a href="http://rvm.io">http://rvm.io</a> works, and can direct emacs to use any of the various
+  rubies that rvm provides.
+</p>
+<p>
+  I explicitly use the default ruby from RVM, but Emacs also updates
+  the ruby I'm using each time I start editing a file in ruby-mode. I
+  think this works by looking at the location of the file I'm editing,
+  looking "up" to find the associated .rvmrc or .ruby-version, and
+  then activating it.
+</p>
+<p>
+  With all of that said, my main flow is to run rspec and cucumber
+  from within emacs. This capability is provided by feature-mode and
+  rspec-mode.
+</p>
+<p>
+  The main key bindings I use are:
+</p>
+<ul>
+<li><code>C-c , v</code>
+
+<p>
+      Run rspec or cucumber against the file I'm editing
+</p>
+</li>
+<li><code>C-c , s</code>
+
+<p>
+      Run rspec or cucumber against the single line of the spec or
+      feature I'm editing.
+</p></li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> rvm</h4>
+<div class="outline-text-4" id="text-6-2-1">
+
+
+
+
+
+<pre class="example">(sacha/package-install 'rvm)
+</pre>
+
+
+<p>
+  For emacs, on a MacOS, I believe the following configures my setup
+  so that I'll use the default ruby provided by RVM when I need ruby.
+</p>
+
+
+
+<pre class="example">(rvm-use-default)
+</pre>
+
+
+<p>
+  I was reading a <a href="http://devblog.avdi.org/2011/10/11/rvm-el-and-inf-ruby-emacs-reboot-14/">blog post by Avdi Grimm about how he was using RVM</a>
+  the other day, and that's where I picked up the following helpful
+  snippet that works with the emacs rvm subsystem to activate the
+  correct version of ruby each time you open a ruby-based file:
+</p>
+
+
+
+<pre class="example">(add-hook 'ruby-mode-hook
+          (lambda () (rvm-activate-corresponding-ruby)))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> feature-mode</h4>
+<div class="outline-text-4" id="text-6-2-2">
+
+
+<p>
+  I don't often write Gherkin at work, but I do try to use Cucumber
+  whenever I get the chance on side projects. So far I've been using
+  this mode mainly for syntax highlighting.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'feature-mode)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> rspec-mode</h4>
+<div class="outline-text-4" id="text-6-2-3">
+
+
+<p>
+  I <b>love</b> rspec.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'rspec-mode)
+</pre>
+
+
+<p>
+  I also have been using ZSH, and when I was getting rspec-mode up and
+  running a few months ago, I ran into trouble. Thankfully, the author
+  of rspec mode had <a href="https://github.com/pezra/rspec-mode">a solution for using rspec mode with ZSH</a>.
+</p>
+
+
+
+<pre class="example">(defadvice rspec-compile (around rspec-compile-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+(ad-activate 'rspec-compile)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-4" class="outline-4">
+<h4 id="sec-6-2-4"><span class="section-number-4">6.2.4</span> ruby-mode</h4>
+<div class="outline-text-4" id="text-6-2-4">
+
+
+<p>
+  For now, the main thing I do is turn on ruby-mode when I'm
+  editing well known file types:
+</p>
+
+
+
+<pre class="example">(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.thor$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Thorfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-5" class="outline-4">
+<h4 id="sec-6-2-5"><span class="section-number-4">6.2.5</span> ruby-electric</h4>
+<div class="outline-text-4" id="text-6-2-5">
+
+
+<p>
+    This minor mode automatically inserts a right brace when you
+    enter a left brace, or an "end" when you define a def.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'ruby-electric)
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Magit</h3>
+<div class="outline-text-3" id="text-6-3">
+
+
+<p>
+   I <b>love</b> magit.
+</p>
+<p>
+   Beyond cosmetics, here are two great blog posts about magit: <a href="http://whattheemacsd.com/setup-magit.el-01.html">Setup Magit #1</a> and <a href="http://whattheemacsd.com/setup-magit.el-02.html">Setup Magit #2</a>.  The main points are:
+</p>
+<ul>
+<li>Give Magit full screen when you start it.
+
+</li>
+<li>Setup Magit so that pressing "q" gets rid of full screen.
+
+</li>
+<li>Setup Magit so that pressing "W" toggles paying attention to
+     whitespace.
+</li>
+</ul>
+
+
+<p>
+   I happen to have <code>emacsclient</code> installed in two places, one at
+   <code>/usr/bin</code> and another at <code>/usr/local/bin</code>. The one at <code>/usr/bin</code>
+   cannot find my emacs server and this causes Magit to freeze
+   whenever I try to commit. This is why I explicitly set
+   <code>magit-emacsclient-executable</code>.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'magit)
+
+(require 'magit)
+
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+(defun magit-quit-session ()
+  "Restores the previous window configuration and kills the magit buffer"
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :magit-fullscreen))
+
+(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+(defun magit-toggle-whitespace ()
+  (interactive)
+  (if (member "-w" magit-diff-options)
+      (magit-dont-ignore-whitespace)
+    (magit-ignore-whitespace)))
+
+(defun magit-ignore-whitespace ()
+  (interactive)
+  (add-to-list 'magit-diff-options "-w")
+  (magit-refresh))
+
+(defun magit-dont-ignore-whitespace ()
+  (interactive)
+  (setq magit-diff-options (remove "-w" magit-diff-options))
+  (magit-refresh))
+
+(define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
+
+(setq magit-emacsclient-executable "/usr/local/bin/emacsclient")
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> yasnippet</h3>
+<div class="outline-text-3" id="text-6-4">
+
+
+<p>
+  My favorite snippet to use is <code>dbg</code>, which I found in Jim Weirich's
+  emacs setup <a href="https://github.com/jimweirich/emacs-setup/blob/master/snippets/text-mode/ruby-mode/dbg">here</a>.
+</p>
+
+
+
+<pre class="example">(sacha/package-install 'yasnippet)
+(require 'yasnippet)
+(setq yas-snippet-dirs (concat jedcn-es/dir "/snippets"))
+</pre>
+
+
+<p>
+  When I was setting up yasnippet, I saw the following in the official
+  documentation:
+</p>
+
+
+
+<pre class="example">(yas-global-mode 1)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> org-mode</h3>
+<div class="outline-text-3" id="text-6-5">
+
+
+<p>
+  OrgMode is a wonderful thing.
+</p>
+
+</div>
+
+<div id="outline-container-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> Defaults</h4>
+<div class="outline-text-4" id="text-6-5-1">
+
+
+<p>
+  When I open a .org file, I like to see all of the headlines but
+  none of the text:
+</p>
+
+
+
+<pre class="example">(setq org-startup-folded 'content)
+</pre>
+
+
+<p>
+  Hiding the stars looks cleaner to me:
+</p>
+
+
+
+<pre class="example">(setq org-hide-leading-stars 'hidestars)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2"><span class="section-number-4">6.5.2</span> Code Blocks</h4>
+<div class="outline-text-4" id="text-6-5-2">
+
+
+<p>
+  These emacs configuration files (.org, .el) use org's "code blocks"
+  extensively, and the following has Emacs pay attention to the type
+  of code within the blocks.
+</p>
+
+
+
+<pre class="example">(setq org-src-fontify-natively t)
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-6-5-2-1" class="outline-5">
+<h5 id="sec-6-5-2-1"><span class="section-number-5">6.5.2.1</span> Editing Code Blocks</h5>
+<div class="outline-text-5" id="text-6-5-2-1">
+
+
+<p>
+  With your cursor over one of these code blocks you can type C-c '
+  and a new buffer will open for editing just that content.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-5-2-2" class="outline-5">
+<h5 id="sec-6-5-2-2"><span class="section-number-5">6.5.2.2</span> Executing Code Blocks</h5>
+<div class="outline-text-5" id="text-6-5-2-2">
+
+
+<p>
+  With your cursor over one of these code blocks you can type C-c C-c
+  and, if the code block is one of the languages that has been
+  configured to be run, the block will be executed and the results
+  printed nearby.
+</p>
+<p>
+  By default, only emacs-lisp is configured to be executed.
+  The following block makes it so that ruby is too.
+</p>
+<p>
+  Here's the documentation for this: <a href="http://orgmode.org/worg/org-contrib/babel/languages.html">babel/languages</a>.
+</p>
+
+
+
+<pre class="example">(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (ruby . t)))
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Various and Sundry</h2>
+<div class="outline-text-2" id="text-7">
+
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Jim Weirich's eval-buffer</h3>
+<div class="outline-text-3" id="text-7-1">
+
+
+<p>
+   I saw Jim Weirich give a great talk at one of the keynotes of Ruby
+   Conf 2012. The way he used buffer evaluation was just awesome!
+</p>
+<p>
+   His setup (which I think is described below) allows him to
+   consistently show you one piece of code and then pair that code up
+   with the output that comes from executing it.
+</p>
+<p>
+   Unlike using an inferior-ruby process, the resulting code output has
+   very little noise.
+</p>
+<p>
+   You can find the <a href="https://github.com/jimweirich/emacs-setup-esk/blob/master/eval-buffer.el">original code that he wrote right here</a>.
+</p>
+<p>
+   The only thing I've changed is the variable
+   <code>jw-eval-buffer-commands</code> and instead I've created
+   <code>jedcn-eval-buffer-commands</code> just because I do not have xruby.
+</p>
+
+
+
+<pre class="example">(defconst jedcn-eval-buffer-commands
+  '(("js" . "/usr/local/bin/node")
+    ("rb" . "ruby")
+    ("coffee" . "/usr/local/bin/coffee")
+    ("clj" . "/Users/jim/local/bin/clojure")
+    ("py" . "/usr/bin/python")))
+</pre>
+
+
+
+<pre class="example">(defconst jw-eval-buffer-name "*EVALBUFFER*")
+
+(defun jw-eval-buffer ()
+  "Evaluate the current buffer and display the result in a buffer."
+  (interactive)
+  (save-buffer)
+  (let* ((file-name (buffer-file-name (current-buffer)))
+         (file-extension (file-name-extension file-name))
+         (buffer-eval-command-pair (assoc file-extension jedcn-eval-buffer-commands)))
+    (if buffer-eval-command-pair
+        (let ((command (concat (cdr buffer-eval-command-pair) " " file-name)))
+          (shell-command-on-region (point-min) (point-max) command jw-eval-buffer-name nil)
+          (pop-to-buffer jw-eval-buffer-name)
+          (other-window 1)
+          (jw-eval-buffer-pretty-up-errors jw-eval-buffer-name)
+          (message ".."))
+      (message "Unknown buffer type"))))
+
+(defun jw-eval-buffer-pretty-up-errors (buffer)
+  "Fix up the buffer to highlight the error message (if it contains one)."
+  (save-excursion
+    (set-buffer buffer)
+    (goto-char (point-min))
+    (let ((pos (search-forward-regexp "\\.rb:[0-9]+:\\(in.+:\\)? +" (point-max) t)))
+      (if pos (progn
+                (goto-char pos)
+                (insert-string "\n\n")
+                (end-of-line)
+                (insert-string "\n"))))))
+
+(defun jw-clear-eval-buffer ()
+  (interactive)
+  (save-excursion
+    (set-buffer jw-eval-buffer-name)
+    (kill-region (point-min) (point-max))))
+
+(defun jw-eval-or-clear-buffer (n)
+  (interactive "P")
+  (cond ((null n) (jw-eval-buffer))
+        (t (jw-clear-eval-buffer))))
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Appendix A: Installation Details</h2>
+<div class="outline-text-2" id="text-8">
+
+
+<p>
+  This appendix covers both how I install Emacs on MacOS and how I get
+  up and running with <code>emacs-setup</code>.
+</p>
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> Emacs Installation</h3>
+<div class="outline-text-3" id="text-8-1">
+
+
+<p>
+   On MacOS I install Emacs using <a href="http://brew.sh/">Homebrew</a>. I run the following at my
+   shell prompt:
+</p>
+
+
+
+<pre class="example">brew install emacs --cocoa
+</pre>
+
+
+<p>
+   This takes some time to complete, and when finished I take another
+   step to make Emacs appear as one of my Applications:
+</p>
+
+
+
+<pre class="example">ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications
+</pre>
+
+
+<p>
+   Now I can start emacs by selecting it graphically in the
+   Applications area.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> Using <code>emacs-setup</code></h3>
+<div class="outline-text-3" id="text-8-2">
+
+
+<p>
+   Once I have Emacs 24+ running, I use git to clone my <code>emacs-setup</code>
+   to my machine, cd into the cloned directory, and source the file
+   <code>install.sh</code>:
+</p>
+
+
+
+<pre class="example">git clone https://github.com/jedcn/emacs-setup.git
+cd emacs-setup
+source install.sh
+</pre>
+
+
+<p>
+   The contents of the <code>install.sh</code> file achieve the following:
+</p>
+<ul>
+<li>They allow you to supply a <code>HOME</code> and will create an <code>.emacs.d</code>
+     if needed.
+
+</li>
+<li>They create a link within this <code>.emacs.d</code> back to the cloned
+     <code>emacs-setup</code>.
+
+</li>
+<li>They create a single line of elisp that loads up the composite
+     <code>emacs-setup.el</code>.
+</li>
+</ul>
+
+
+
+
+
+<pre class="example">emacs_setup_dir=`pwd`
+
+echo "Creating $HOME/.emacs.d (if needed)"
+mkdir -p $HOME/.emacs.d
+
+echo "Creating $HOME/.emacs.d/emacs-setup as link to $emacs_setup_dir"
+ln -s $emacs_setup_dir $HOME/.emacs.d/emacs-setup
+
+echo "Creating $HOME/.emacs.d/init.el"
+echo '(load (concat user-emacs-directory "emacs-setup/emacs-setup.el"))' &gt;&gt; $HOME/.emacs.d/init.el
+</pre>
+
+
+<p>
+   It is important to note that <code>HOME</code> can be given a temporary value
+   and this lets me test my installation process. I can get a fresh
+   copy of <code>emacs-setup</code> and clone it into a temporary directory, and
+   then I can run the <code>install.sh</code> with a temporary value of <code>HOME</code>
+   like so:
+</p>
+
+
+
+<pre class="example">mkdir /tmp/emacs-setup &amp;&amp; cd /tmp/emacs-setup
+git clone https://github.com/jedcn/emacs-setup.git .
+
+mkdir /tmp/emacs-home
+HOME=/tmp/emacs-home source install.sh
+HOME=/tmp/emacs-home /Applications/Emacs.app/Contents/MacOS/Emacs &amp;
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Appendix B: Babel and the Config</h2>
+<div class="outline-text-2" id="text-9">
+
+
+<p>
+  My configuration is stored as several .org files. This is done to
+  optimize for editing and the production of documentation (via
+  <code>org-export</code>). However, emacs does not read these .org files and
+  instead it reads a single elisp file, <code>emacs-setup.el</code>.
+</p>
+<p>
+  How is a single elisp file generated from several .org files? The
+  .org files are concatenated together in a specific order to create a
+  composite .org file named <code>emacs-setup.org</code>. This composite file can
+  be used to generate <code>emacs-setup.el</code>, and it can also generate
+  complete documentation in various formats: HTML or LaTeX/PDF.
+</p>
+<p>
+  Emacs has built in support for extracting and loading elisp within
+  .org files via <code>org-babel-load-file</code>. Why not just use this on each
+  .org file individually rather than orchestrating a process by which
+  they are concatenated into a single, larger document? I want to
+  focus on woven documentation. Why not just operate on just a larger
+  .org file? I want to work towards modularity. Putting these two
+  concepts together, I think of each .org file as a stand-alone entity
+  that is both chapter in a larger story and section in a larger
+  program.
+</p>
+<p>
+  The remainder of this appendix details how this orchestration
+  works. All of the functions and variables in this section begin with
+  <code>jedcn-es/</code> to indicate their logical association with my (<code>jedcn</code>)
+  emacs setup (<code>es</code>).
+</p>
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> Composite File</h3>
+<div class="outline-text-3" id="text-9-1">
+
+
+<p>
+   The name of the composite .org file is <code>emacs-setup.org</code>, and its
+   location is stored for future reference in <code>composite-org</code>.
+</p>
+
+
+
+<pre class="example">(setq jedcn-es/composite-org (concat
+                              jedcn-es/dir
+                              "/emacs-setup.org"))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> Component Files</h3>
+<div class="outline-text-3" id="text-9-2">
+
+
+<p>
+   The list of files that will be included in the is stored in
+   <code>files</code>. Order is significant. These files are presumed to be
+   within <code>files-dir</code>.
+</p>
+
+
+
+<pre class="example">(setq jedcn-es/files-dir (concat
+                          jedcn-es/dir
+                          "/org"))
+
+(setq jedcn-es/files '("introduction.org"
+                       "general-setup.org"
+                       "personal-information.org"
+                       "key-bindings.org"
+                       "behaviors.org"
+                       "modes.org"
+                       "various-and-sundry.org"
+                       "appendix-a.org"
+                       "appendix-b.org"))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> Concatenation</h3>
+<div class="outline-text-3" id="text-9-3">
+
+
+<p>
+   The composite file is created with <code>create-composite-org</code>, which in
+   turn relies on <code>concat-files</code>, <code>files-dir</code>, and <code>files</code>, and
+   <code>composite-org</code>.
+</p>
+
+
+
+<pre class="example">(defun jedcn-es/concat-files (the-files target-file)
+  "Concatenate a list of THE-FILES into a TARGET-FILE"
+  (let* ((original-buffer (current-buffer))
+         (result-file target-file)
+         (files the-files)
+         (file (car files)))
+    ;; do..
+    (find-file file)
+    (write-region (point-min) (point-max) result-file)
+    (setq files (cdr files))
+    (setq file (car files))
+    ;; while
+    (while files
+      (find-file file)
+      (write-region (point-min) (point-max) result-file t)
+      (setq files (cdr files))
+      (setq file (car files)))
+    (switch-to-buffer original-buffer)))
+
+(defun jedcn-es/create-composite-org ()
+  "Create a composite org file based on my list of config files"
+  (jedcn-es/concat-files
+   (mapcar (lambda (file)
+             (concat jedcn-es/files-dir "/" file))
+           jedcn-es/files)
+   jedcn-es/composite-org))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9-4" class="outline-3">
+<h3 id="sec-9-4"><span class="section-number-3">9.4</span> Extracting elisp</h3>
+<div class="outline-text-3" id="text-9-4">
+
+
+<p>
+   Literate programming uses the verb "tangling" to describe the
+   extraction of pure source code from its annotated source. We'll aim
+   to extract the elisp from <code>composite-org</code> and place it into
+   <code>composite-el</code>.
+</p>
+
+
+
+<pre class="example">(setq jedcn-es/composite-el (concat jedcn-es/dir "/emacs-setup.el"))
+</pre>
+
+
+<p>
+   Babel supports code extraction with a function named
+   <code>org-babel-tangle-file</code>, and we can hook into the process described
+   above as follows:
+</p>
+
+
+
+<pre class="example">(defun jedcn-es/tangle-composite-org ()
+  (org-babel-tangle-file jedcn-es/composite-org jedcn-es/composite-el))
+</pre>
+
+
+<p>
+   When this has completed, we will have the tangled result residing
+   at <code>composite-el</code>. The next logical step is to load it up and try
+   it out:
+</p>
+
+
+
+<pre class="example">(defun jedcn-es/load-composite-el ()
+  (load-file jedcn-es/composite-el))
+</pre>
+
+
+<p>
+   Stepping back, we can bundle up the creation of the composite .org
+   file from its component pieces, then tangle it, and then load the
+   result with <code>jedcn-es/rebuild-and-reload</code>:
+</p>
+
+
+
+<pre class="example">(defun jedcn-es/rebuild-and-reload ()
+  "Rebuild the composite .org file, extract the elisp, and reload"
+  (interactive)
+  (jedcn-es/create-composite-org)
+  (jedcn-es/tangle-composite-org)
+  (jedcn-es/load-composite-el))
+</pre>
+
+
+<p>
+   This is the only function I make interactive. In practice, this
+   means that I can fool around with my .org files, and then <code>M-x    jedcn-es/rebuild-and-reload</code> to try out the latest changes.
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-09-04T17:14-0400</p>
+<p class="author">Author: Jed Northridge</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
