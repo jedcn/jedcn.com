@@ -2,7 +2,7 @@
 layout: post
 title: Emacs
 date: 2013-06-30 15:46
-categories: core-tools, emacs
+categories: core-tools emacs
 ---
 
 # Overview

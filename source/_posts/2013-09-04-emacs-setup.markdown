@@ -2,7 +2,7 @@
 layout: post
 title: "emacs-setup"
 date: 2013-09-04 17:18
-categories: core-tools, emacs
+categories: core-tools emacs
 ---
 
 # Overview
