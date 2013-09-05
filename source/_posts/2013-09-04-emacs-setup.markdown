@@ -85,13 +85,14 @@ This was the first literate program that I wrote, and I enjoyed doing
 it. I think I have a system that I understand, that I can maintain,
 and that I can extend. Having written this up, I'm off to go watch
 some [emacsrocks.com][emacs-rocks-com] or read up on some
-[emacredux.com][emacs-redux-com] or learn more about elisp via
+[emacsredux.com][emacs-redux-com] or learn more about elisp via
 [emacsbites.com][emacs-bites-com].
 
 Before I close the chapter on this post, I would be remiss if I didn't
-at least point out that Babel and Org-Mode, the parts of emacs that
-enable literate programming, are a real delight to work with! If you
-are thinking of treading this path, be sure to check out Schulte's
+at least point out that [Babel][babel] and [Org-mode][org-mode], the
+parts of emacs that enable literate programming, are a real delight to
+work with! If you are thinking of treading this path, be sure to check
+out Schulte's
 [A Multi-Language Computing Environment for Literate Programming and Reproducible Research][jstatsoft-lp-and-rr].
 
 ## Resources
@@ -108,10 +109,13 @@ are thinking of treading this path, be sure to check out Schulte's
   [emacsrocks.com][emacs-rocks-com].
 * A good place to get excited about elisp:
   [emacsbites.com][emacs-bites-com].
-* A neat site with emacs goodness: [emacredux.com][emacs-redux-com].
+* A neat site with emacs goodness: [emacsredux.com][emacs-redux-com].
 * Eric Shulte's [paper][jstatsoft-lp-and-rr] on doing Literate
   Programming in Emacs.
+* [Org-mode][org-mode]
+* [Babel][babel]: active code in Org-mode
 
+[babel]: http://orgmode.org/worg/org-contrib/babel/
 [emacs-bites-com]: http://www.emacsbites.com/
 [emacs-redux-com]: http://emacsredux.com/
 [emacs-rocks-com]: http://emacsrocks.com/
@@ -122,6 +126,7 @@ are thinking of treading this path, be sure to check out Schulte's
 [github-technomancy-esk]: https://github.com/technomancy/emacs-starter-kit
 [jedcn-emacs-setup-first-draft]: https://github.com/jedcn/emacs-setup/tree/v0.0.1
 [jstatsoft-lp-and-rr]: http://www.jstatsoft.org/v46/i03
+[org-mode]: http://orgmode.org/
 [sacha-chua-emacs-config]: http://sachachua.com/blog/2012/06/literate-programming-emacs-configuration-file/
 [vagrant-rebuild]: http://docs.vagrantup.com/v2/getting-started/rebuild.html
 [wikipedia-lp]: http://en.wikipedia.org/wiki/Literate_programming
