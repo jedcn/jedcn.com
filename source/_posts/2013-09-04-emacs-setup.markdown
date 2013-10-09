@@ -76,7 +76,7 @@ _Reproducible_ and _Easily Tested_ are not difficult to achieve with
 emacs. The hardest part was having the discipline, from an early
 stage, to actively delete my `~/.emacs.d` several times a day. I
 admit, the first time I just did a `mv ~/.emacs.d
-~/.emacs.d-please-work`, but it was awesome to get to a point where I
+~/.emacs.d-please-work`, but it was pleasant to get to a point where I
 could delete and re-create with ease.
 
 # In Closing
