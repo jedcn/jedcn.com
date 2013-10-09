@@ -6,8 +6,8 @@ layout: page
 
 ..is a small site of notes taken by Jed Northridge.
 
-I've made this mainly for myself, but if you're reading it and you'd
-like to get in touch, please do. Find me at
+I've made this for myself, but if you're reading it and you'd like to
+get in touch, please do. Find me at
 [northridge@gmail.com](mailto:northridge@gmail.com).
 
 
@@ -17,6 +17,10 @@ like to get in touch, please do. Find me at
 
 ## The Setup
 
-..it is powered by [Octopress](http://octopress.org/), and the source
-is available at
-[https://github.com/jedcn/jedcn.com](https://github.com/jedcn/jedcn.com)
+..it is powered by [Octopress][octopress] and themed by
+[Whitespace][whitespace]. Details available
+[on github][github-jedcn-com].
+
+[github-jedcn-com]: https://github.com/jedcn/jedcn.com
+[octopress]: http://octopress.org/
+[whitespace]: https://github.com/lucaslew/whitespace
