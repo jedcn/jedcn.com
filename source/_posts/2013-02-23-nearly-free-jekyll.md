@@ -89,7 +89,7 @@ task :deploy do
   sh "jekyll --no-auto"
   user = 'your_nfsn_ssh_login'
   server = 'ssh.phx.nearlyfreespeech.net'
-  sh "rsync -crz --delete _site/ #{user}@#{server}:/home/public"
+  sh "rsync -icrz --delete _site/ #{user}@#{server}:/home/public"
 end
 ```
 
