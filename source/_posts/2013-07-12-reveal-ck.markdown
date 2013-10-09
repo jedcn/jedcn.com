@@ -228,7 +228,7 @@ content here: http://jedcn.github.io/my-talk/slides.
 
 ## More Help?
 
-Here's a [quick introduction][reveal-ck-introduction] to reveal-ck.
+Here's a [quick overview][reveal-ck-overview] to reveal-ck.
 
 And here's a [Getting Started][reveal-ck-getting-started] page.
 
@@ -266,6 +266,10 @@ At any rate, I hope this helps. Let me know what you think.
 * [Haml][haml]
 * [Haml Reference][haml-reference]
 * [Haml Tutorial][haml-tutorial]
+* [Slim Reference][slim-reference]
+* [Slim Homepage][slim]
+* [reveal-ck Overview][reveal-ck-overview]
+* [reveal-ck Getting Started][reveal-ck-getting-started]
 
 [reveal-js]: http://lab.hakim.se/reveal-js/
 [slides]: http://slid.es/
@@ -277,4 +281,4 @@ At any rate, I hope this helps. Let me know what you think.
 [slim-reference]: http://rdoc.info/gems/slim/frames
 [reveal-ck-ruby]: https://github.com/jedcn/reveal-ck/blob/master/doc/slides_with_ruby.md
 [reveal-ck-getting-started]: https://github.com/jedcn/reveal-ck/blob/master/doc/getting_started.md
-[reveal-ck-introduction]: http://jedcn.github.io/reveal-ck/
+[reveal-ck-overview]: http://jedcn.github.io/reveal-ck/
