@@ -9,6 +9,13 @@ categories: jekyll
 How to get a [Jekyll][jekyll] generated site up on
 [Nearly Free Speech][nearlyfree] with minimal hassle.
 
+## Update
+
+This site used to be created with Jekyll, and I wrote this to remind
+myself of what it took to "bootstrap" the site. That said, I've since
+switched to Octopress. I still generate locally, and I still rsync
+stuff up.
+
 # Background
 
 [Nearly Free Speech][nearlyfree] is a popular hosting provider that's
