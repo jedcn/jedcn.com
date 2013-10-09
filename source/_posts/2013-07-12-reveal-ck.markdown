@@ -38,7 +38,7 @@ Verify that reveal-ck is present with `reveal-ck --help`.
 As a first step toward creating a set of slides, put the following
 into a file named `slides.haml`:
 
-```
+```haml
 %section
   3
 
@@ -98,7 +98,7 @@ just like markdown, reveal-ck bundles redcarpet for markdown
 processing. This means that you can embed markdown in both slim and
 haml. For example, in haml:
 
-```
+```haml
 %section
   :markdown
     # Hello
@@ -129,7 +129,7 @@ slides, you need to add the `fragment` class. Here's an example where
 everything with `fragment` is hidden initially and then appears in
 stages as you advance:
 
-```
+```haml
 %section
   %p
     RSpec is
@@ -141,7 +141,7 @@ stages as you advance:
 
 And here is an example where vertical slides are used:
 
-```
+```haml
 %section
   %section
     Vertical Slide 1
@@ -191,7 +191,7 @@ anything in `images/` will be bundled up into the `slides/` directory.
 In short, this means that you can reference those images with the
 following:
 
-```
+```haml
 %section
   %img{ alt: "My Image", src: "images/my-image.png" }
 ```
