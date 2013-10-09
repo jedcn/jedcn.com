@@ -84,14 +84,14 @@ If you put this into a Rakefile you wouldn't have to remember the
 specific command line options for rsync or to regenerate the site each
 time:
 
-{% highlight ruby %}
+```ruby
 task :deploy do
   sh "jekyll --no-auto"
   user = 'your_nfsn_ssh_login'
   server = 'ssh.phx.nearlyfreespeech.net'
   sh "rsync -crz --delete _site/ #{user}@#{server}:/home/public"
 end
-{% endhighlight %}
+```
 
 And each time you wanted to deploy you'd type:
 
