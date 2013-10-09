@@ -101,11 +101,10 @@ $ rake deploy
 
 ## Resources
 
-The [Jekyll Deploy Wiki][jekyll-deploy] discusses rsync.
-
-Nathan Grigg has a blog entry all about
-[rsyncing with jekyll][nathan-rsync-jekyll] which, in particular,
-revealed the notion of rsync's ```--checksum```
+* The [Jekyll Deploy Wiki][jekyll-deploy] discusses rsync.
+* Nathan Grigg has a blog entry all about
+  [rsyncing with jekyll][nathan-rsync-jekyll] which, in particular,
+  revealed the notion of rsync's ```--checksum```
 
 [nearlyfree]: https://www.nearlyfreespeech.net/
 [jekyll]: https://github.com/mojombo/jekyll
