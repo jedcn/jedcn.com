@@ -159,17 +159,14 @@ be republished: just let me know.
 ## Supplying a Config
 
 reveal-ck pays attention to a central configuration file. You can
-create a file named `config.toml` in the same directory with your
+create a file named `config.yml` in the same directory with your
 slides files and put the following into it:
 
 ```
-author     = "Your Name"
-title      = "The Title of your Presentation"
-
-[presentation]
-
-theme      = "night"
-transition = "default"
+author:     "Your Name"
+title:      "The Title of your Presentation"
+theme:      "night"
+transition: "default"
 ```
 
 This will change the `<title>` of the slides as you might expect, and
