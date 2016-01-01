@@ -1,6 +1,0 @@
----
-layout: page
----
-# Not Found
-
-Sorry! Couldn't find that page.
