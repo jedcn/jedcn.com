@@ -17,7 +17,14 @@ NPM is here for the `scripts`.
 
 ### Deploy
 
-* ???
+Deploy credentials must be placed in a file named `~/.jedcn.com.rc`:
+
+```shell
+DEPLOY_HOST=the-server-where-jedcn.com-is-hosted
+DEPLOY_USER=the-user-that-can-rsync-into-DEPLOY_HOST
+```
+
+Once this is created, run `npm run build-and-deploy`.
 
 ## Setup
 

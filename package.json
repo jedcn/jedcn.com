@@ -5,6 +5,7 @@
   "main": "README.md",
   "scripts": {
     "build": "bundle exec middleman build",
+    "build-and-deploy": "npm run build && ./scripts/deploy.sh",
     "clean": "rm -rf build && rm -rf tmp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bundle exec middleman server"
