@@ -129,11 +129,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman (>= 4.0.0)
-  middleman-compass (>= 4.0.0)
+  middleman (= 4.0.0)
+  middleman-compass (= 4.0.1)
   middleman-livereload
-  tzinfo-data
-  wdm (~> 0.1.0)
 
 BUNDLED WITH
    1.11.2
