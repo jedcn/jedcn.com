@@ -13,6 +13,11 @@
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <%= partial "nav" %>
+    <div class='container'>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
