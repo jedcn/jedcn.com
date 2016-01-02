@@ -1,19 +1,44 @@
-require 'sass-globbing'
+###
+# Page options, layouts, aliases and proxies
+###
 
-# Require any additional compass plugins here.
-project_type = :stand_alone
+# Per-page layout changes:
+#
+# With no layout
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
 
-# Publishing paths
-http_path = "/"
-http_images_path = "/images"
-http_generated_images_path = "/images"
-http_fonts_path = "/fonts"
-css_dir = "public/stylesheets"
+# With alternative layout
+# page "/path/to/file.html", layout: :otherlayout
 
-# Local development paths
-sass_dir = "sass"
-images_dir = "source/images"
-fonts_dir = "source/fonts"
+# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
+#  which_fake_page: "Rendering a fake page with a local variable" }
 
-line_comments = false
-output_style = :compressed
+# General configuration
+
+# Reload the browser automatically whenever files change
+configure :development do
+  activate :livereload
+end
+
+###
+# Helpers
+###
+
+# Methods defined in the helpers block are available in templates
+# helpers do
+#   def some_helper
+#     "Helping"
+#   end
+# end
+
+# Build-specific configuration
+configure :build do
+  # Minify CSS on build
+  # activate :minify_css
+
+  # Minify Javascript on build
+  # activate :minify_javascript
+end
