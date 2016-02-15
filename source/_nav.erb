@@ -2,6 +2,18 @@
   <input id='menu-toggle' class='menu-toggle' type='checkbox'>
   <label for='menu-toggle'>Menu</label>
   <ul class='list-unstyled list-inline cf'>
-    <li><a href='/'>/</a></li>
+    <li><a href='/'>@jedcn</a></li>
+    <% if current_resource.url == '/career/' %>
+      <li>Career</li>
+    <% else %>
+      <li><a href='/career/'>Career</a></li>
+    <% end %>
+    <li class='pull-right'>
+      <% if current_resource.url == '/about/' %>
+        About
+      <% else %>
+        <a href='/about/'>About</a>
+      <% end %>
+    </li>
   </ul>
 </nav>
