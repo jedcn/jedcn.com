@@ -74,6 +74,19 @@ Galileo was the first application at CTCT to deploy in this manner,
 but the groundwork I put in place now serves as the mechanism by which
 all of our static apps deploy.
 
+##### Notifications
+
+While I was doing this infrastructure work, I setup several systems
+that helped my team members be more efficient. One example was direct
+notifications when builds completed:
+
+![Build Complete](/images/hipchat-direct-message-build-complete.png "Build Complete")
+
+And another was room notifications with links to source code diffs
+when deploys completed:
+
+![Code Deployed](/images/hipchat-room-production-deploy.png "Code Deployed")
+
 #### Back to the Frontend
 
 While I was doing the work above, I ended up leading the backend team.
