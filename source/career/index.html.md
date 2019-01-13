@@ -4,23 +4,27 @@ title: Career
 
 ## Summary
 
-### Approach
-
-The way someone goes about doing work is often more important than the
-work they do. I have [documented my approach here][approach].
-
-[approach]: ./approach/
-
 ### Companies
+
+#### HubSpot
+
+##### Director of Engineering - Sales Hub
+
+#### Wayfair
+
+##### Associate Director of Engineering
+
+I worked with the Content, Media, and Homepage teams.
+
+I also ran the JavaScript Platform team.
 
 #### Constant Contact
 
-I am currently employed by Constant Contact and
-[this is what I've been up to at CTCT][ctct].
-
-[ctct]: ./ctct/
+##### Principal Software Engineer
 
 #### Currensee
+
+##### Senior Software Engineer
 
 #### Viximo
 

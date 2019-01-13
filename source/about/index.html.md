@@ -4,23 +4,19 @@ title: About
 
 ## About
 
-I make my living as a Software Engineer, and this site contains a
-version of my [resume].
+I have mostly been in engineering leadership positions for the past few years.
+
+Prior to that, I was a software engineer that mainly did [front-end
+work][resume].
 
 [resume]: /resume/
-
-However, resumes are not always the best way to describe what you do
-for work. This site also contains an informal
-[summary of my career][career].
-
-[career]: /career/
-
-I have a number of side projects. These are documented at
-[https://jedcn.github.io/].
-
-[https://jedcn.github.io/]: https://jedcn.github.io/
 
 If you would like to get in touch, [email][hi-jedcn-com] is probably
 best.
 
 [hi-jedcn-com]: mailto:hi@jedcn.com
+
+The most important thing to know about me is which [t-shirts I
+wear][wears-t-shirts].
+
+[wears-t-shirts]: https://github.com/jedcn/wears-t-shirts
